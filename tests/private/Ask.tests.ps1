@@ -27,7 +27,7 @@ InModuleScope "PSHitchhiker" {
             Mock Get-RandomQuote { return "Science." } -Verifiable
             It "returns a random answer for unknown questions" {
                 Ask -Question "Why is pie delicious?" | Should be "Science."
-                Assert-VerifiableMocks
+                Assert-VerifiableMock
             }
         }
     }

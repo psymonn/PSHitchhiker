@@ -30,7 +30,7 @@ task Clean BeforeClean, {
     New-Item -ItemType Directory -Path $Artifacts -Force
 
     # Temp
-    & git clone https://github.com/Xainey/PSTestReport.git
+    & git clone https://github.com/psymonn/PSHitchhiker.git
 }, AfterClean
 
 # Synopsis: Lint Code with PSScriptAnalyzer
