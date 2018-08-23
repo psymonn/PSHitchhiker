@@ -1,8 +1,15 @@
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$here = $here -replace 'tests', 'PSHitchhiker'
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
+Write-Host "parent: $here"
 
+$here = $here -replace 'tests', 'PSHitchhiker'
+Write-Host "replace: $here"
+
+$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
+Write-Host "file: $sut"
+
+#only using dot sourcing not auto import modules
 . "$here\$sut"
+write-host "dot-source: $here\$sut"
 
 Describe "Get-RomanNumeral" {
   Context "Simple Calculations" {
