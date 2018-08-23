@@ -16,7 +16,7 @@ $Settings = @{
     SMBRepoName = 'DSCGallery'
     SMBRepoPath = 'F:\Shared Folder\Repo'
 
-    Author = "Psymon Ng"
+    Author = "Michael Willis"
     Owners = "Michael Willis"
     LicenseUrl = 'https://github.com/psymonn/PSHitchhiker/LICENSE'
     ProjectUrl = "https://github.com/psymonn/PSHitchhiker"
