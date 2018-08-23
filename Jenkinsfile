@@ -75,5 +75,5 @@ def notifyBuild(String buildStatus = 'STARTED') {
   def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
   def summary = "${subject} (${env.BUILD_URL})"
 
-  slackSend (color: colorCode, channel: "${Globals.JenkinsChannel}", message: summary)
+  //slackSend (color: colorCode, channel: "${Globals.JenkinsChannel}", message: summary)
 }
