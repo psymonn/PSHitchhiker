@@ -25,8 +25,8 @@ $Settings = @{
     Tags = ""
 
     # TODO: fix any redudant naming
-    GitRepo = "psymonn/PSHitchhiker"
-    CIUrl = "http://jenkins/job/PSHitchhiker Pineline/"
+    GitRepo = "Psymonn/PSHitchhiker"
+    CIUrl = "http://localhost:8080/job/PSHitchHiker Pineline/"
 }
 
 ###############################################################################
