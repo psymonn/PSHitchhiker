@@ -1,4 +1,3 @@
-checkout scm
 // Config
 class Globals {
    static String GitRepo = 'https://github.com/psymonn/PSHitchhiker.git'
@@ -9,6 +8,8 @@ class Globals {
 // Workflow Steps
 node('master') {
   try {
+    checkout scm
+
     notifyBuild('STARTED')
 
     stage('Stage 0: Clone') {
