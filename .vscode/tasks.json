@@ -13,7 +13,8 @@
 
 	// Start PowerShell
     "windows": {
-        "command": "${env.windir}\\sysnative\\windowspowershell\\v1.0\\PowerShell.exe"
+        //"command": "${env.windir}\\System32\\windowspowershell\\v1.0\\PowerShell.exe"
+        "command": "C:\\Windows\\System32\\windowspowershell\\v1.0\\PowerShell.exe"
     },
     "linux": {
         "command": "/usr/bin/powershell"
