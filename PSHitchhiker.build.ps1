@@ -8,7 +8,7 @@
 task Test BeforeTest, RunTests, ConfirmTestsPassed, AfterTest
 
 # Synopsis: Run full Pipleline.
-task . Clean, Analyze, Test, Archive, Publish
+task . InstallDependencies, Clean, Analyze, Test, Archive, Publish
 
 # Synopsis: Install Build Dependencies
 task InstallDependencies {
@@ -18,6 +18,12 @@ task InstallDependencies {
     #Install-Module -Name DscResourceTestHelper -Force
     #Install-Module -Name Pester -Force
     #Install-Module -Name PSScriptAnalyzer -Force
+    write-host 'Check Module dependencies'
+    if (!(Get-Module -Name InvokeBuild -ListAvailable)) { Install-Module -Name InvokeBuild }
+    if (!(Get-Module -Name Pester -ListAvailable)) { Install-Module -Name Pester }
+    if (!(Get-Module -Name PSScriptAnalyzer -ListAvailable)) { Install-Module -Name PSScriptAnalyzer }
+    #if (!(Get-Module -Name PSDeploy -ListAvailable)) { Install-Module -Name PSDeploy }
+
 }
 
 # Synopsis: Clean Artifacts Directory
@@ -30,6 +36,7 @@ task Clean BeforeClean, {
     New-Item -ItemType Directory -Path $Artifacts -Force
 
     # Temp
+    #If let it run then error -> fatal: destination path 'PSHitchhiker' already exists and is not an empty directory.
     & git clone https://github.com/psymonn/PSHitchhiker.git
 }, AfterClean
 

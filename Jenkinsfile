@@ -15,6 +15,9 @@ node('master') {
     stage('Stage 0: Clone') {
       git url: Globals.GitRepo
     }
+    stage('Stage: InstallDependencies') {
+      posh 'Invoke-Build InstallDependencies'
+    }
     stage('Stage 1: Clean') {
       posh 'Invoke-Build Clean'
     }
