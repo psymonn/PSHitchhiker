@@ -18,3 +18,19 @@ System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
 
 These settings do not persist when Jenkins is restarted. They can be added to the JAVA_ARGS for startup as seen in this StackOverflow Comment:
 https://stackoverflow.com/questions/37618892/jenkins-content-security-policy/37623540#37623540
+
+
+Create you own internal powershell repo:
+https://www.nuget.org/downloads
+https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/
+
+Register-PSRepository -Name "PsymonCorp" -SourceLocation "F:\Shared Folder\Repo" -InstallationPolicy Trusted
+
+Get-PSRepository
+Find-Module -Repository "PsymonCorp"
+Install-Module -Name "PSHitchhiker" -Repository "PsymonCorp"
+Install-Module -Name "PSHitchhiker" -Repository "PsymonCorp" -Scope CurrentUser
+
+Import-Module PSHitchhiker
+get-module
+
