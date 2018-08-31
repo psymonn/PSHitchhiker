@@ -34,3 +34,27 @@ Install-Module -Name "PSHitchhiker" -Repository "PsymonCorp" -Scope CurrentUser
 Import-Module PSHitchhiker
 get-module
 
+------
+Get-PSRepository
+Register-PSRepository -Name "Win10Automation" -SourceLocation "C:\Data\App\LocalNuGetFeed\Packages" -InstallationPolicy Trusted
+Find-Module -name "PSHitchhiker" -Repository "Win10Automation" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
+
+#(C:\Data\App\LocalNuGetFeed\Packages\PSHitchhiker.1.0.25.nupkg)
+Install-Module -Name "PSHitchhiker" -Repository "Win10Automation" -Scope CurrentUser    
+
+Uninstall-Module -Name "PSHitchhiker"
+
+
+
+
+Nuget Server:
+PS C:\ProgramData\Microsoft\Windows\PowerShell\PowerShellGet> .\nuget.exe install PSHitchhiker -Source http://localhost:8082/nuget -OutputDirectory C:\data\Modules
+
+find-package -name PSHitchhiker -allversion -Source http://localhost:8082/nuget
+
+Install-Package -name PSHitchhiker -Source http://localhost:8082/nuget
+
+Get-Package -name PSHitchhiker
+
+
+
