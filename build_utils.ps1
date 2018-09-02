@@ -66,7 +66,7 @@ function Publish-SMBModule
     }
     catch [System.Exception]
     {
-        Write-Error "Publish Failed"
+        # Write-Error "Publish Failed"
         throw($_.Exception)
     }
 }
