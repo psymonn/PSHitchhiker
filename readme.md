@@ -43,7 +43,7 @@ Get-PSRepository
 Register-PSRepository -Name "LocalNuGetFeed" -SourceLocation "http://localhost:8087/nuget" -InstallationPolicy Trusted
 Find-Module -name "PSHitchhiker" -Repository "LocalNuGetFeed" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
 
-#(C:\Data\App\LocalNuGetFeed\Packages\PSHitchhiker.1.0.25.nupkg)
+(C:\Data\App\LocalNuGetFeed\Packages\PSHitchhiker.1.0.25.nupkg)
 Install-Module -Name "PSHitchhiker" -Repository "LocalNuGetFeed" -Scope CurrentUser
 Install-Module PSHitchhiker -Repository LocalNuGetFeed
 
