@@ -51,7 +51,6 @@ Import-Module PSHitchhiker
 get-module
 Uninstall-Module -Name "PSHitchhiker"
 
-
 Nuget Command:
 nuget.exe push {package file} {apikey} -Source http://localhost:8087/nuget
 nuget.exe install PSHitchhiker -Source http://localhost:8087/nuget -OutputDirectory F:\Shared Folder\Repo
