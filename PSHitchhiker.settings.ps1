@@ -13,7 +13,7 @@ param(
 # Static settings -- no reason to include these in the param block
 ###############################################################################
 $Settings = @{
-    SMBRepoName = 'DSCGallery'
+    SMBRepoName = 'PsymonCorp'
     SMBRepoPath = 'F:\Shared Folder\Repo'
 
     Author = "Psymon Ng"

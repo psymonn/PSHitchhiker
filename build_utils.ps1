@@ -66,7 +66,7 @@ function Publish-SMBModule
     }
     catch [System.Exception]
     {
-        # Write-Error "Publish Failed"
+        Write-Error "Publish Failed"
         throw($_.Exception)
     }
 }
@@ -175,7 +175,10 @@ function Install-Nuget
     )
 
     # Force Update Provider
-    Install-PackageProvider Nuget -Force
+    #Install-PackageProvider Nuget -Force
+    if (!(Get-PackageProvider -name NuGet)) {
+        Install-PackageProvider Nuget
+    }
 
     $sourceNugetExe = "http://nuget.org/nuget.exe"
     $powerShellGetDir = "$env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet"

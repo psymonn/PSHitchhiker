@@ -12,9 +12,14 @@
 	"version": "0.1.0",
 
 	// Start PowerShell
-    "windows": {
+    //"windows": {
         //"command": "${env.windir}\\System32\\windowspowershell\\v1.0\\PowerShell.exe"
-        "command": "C:\\Windows\\System32\\windowspowershell\\v1.0\\PowerShell.exe"
+    //    "command": "C:\\Windows\\System32\\windowspowershell\\v1.0\\PowerShell.exe"
+    //},
+    "windows": {
+        "command": "${env:windir}/System32/WindowsPowerShell/v1.0/powershell.exe",
+        //"command": "${env:ProgramFiles}/PowerShell/6.0.0/powershell.exe",
+        "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass" ]
     },
     "linux": {
         "command": "/usr/bin/powershell"
