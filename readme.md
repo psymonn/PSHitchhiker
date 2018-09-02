@@ -25,6 +25,7 @@ https://www.nuget.org/downloads
 https://kevinmarquette.github.io/2017-05-30-Powershell-your-first-PSScript-repository/
 
 FileSystem Hosting:
+---
 Get-PSRepository
 Register-PSRepository -Name "PsymonCorp" -SourceLocation "F:\Shared Folder\Repo" -InstallationPolicy Trusted
 
@@ -40,6 +41,7 @@ Uninstall-Module -Name "PSHitchhiker"
 
 
 Local NuGet Server Feed Hosting:
+---
 Get-PSRepository
 Register-PSRepository -Name "LocalNuGetFeed" -SourceLocation "http://localhost:8087/nuget" -InstallationPolicy Trusted
 Find-Module -name "PSHitchhiker" -Repository "LocalNuGetFeed" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
