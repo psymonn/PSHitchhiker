@@ -37,10 +37,12 @@ get-module
 ------
 Get-PSRepository
 Register-PSRepository -Name "Win10Automation" -SourceLocation "C:\Data\App\LocalNuGetFeed\Packages" -InstallationPolicy Trusted
+Register-PSRepository -Name "LocalNuGetFeed" -SourceLocation "http://localhost:8087/nuget" -InstallationPolicy Trusted
 Find-Module -name "PSHitchhiker" -Repository "Win10Automation" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
 
 #(C:\Data\App\LocalNuGetFeed\Packages\PSHitchhiker.1.0.25.nupkg)
-Install-Module -Name "PSHitchhiker" -Repository "Win10Automation" -Scope CurrentUser    
+Install-Module -Name "PSHitchhiker" -Repository "Win10Automation" -Scope CurrentUser
+Install-Module PSHitchhiker -Repository LocalNuGetFeed
 
 Uninstall-Module -Name "PSHitchhiker"
 
