@@ -62,7 +62,9 @@ function Publish-SMBModule
     try
     {
         $env:PSModulePath += ";$PSScriptRoot"
-        Publish-Module -Repository $RepoName -Name $ModuleName
+       # Publish-Module -Repository $RepoName -Name $ModuleName
+        Publish-Module -Repository $RepoName -Name $ModuleName -NuGetApiKey "SECRETKEY" -Verbose
+       # Publish-Module -Path <path-to-module> -NuGetApiKey $APIKey -Repository MyGetFeed -Verbose
     }
     catch [System.Exception]
     {

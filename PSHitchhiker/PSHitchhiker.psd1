@@ -12,7 +12,7 @@
 RootModule = 'PSHitchhiker.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.8.0'
+ModuleVersion = '2.8.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()

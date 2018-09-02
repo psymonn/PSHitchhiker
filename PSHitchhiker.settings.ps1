@@ -6,6 +6,7 @@ param(
     $ModuleName = 'PSHitchhiker',
     $ModulePath = './PSHitchhiker',
     $BuildNumber = $env:BUILD_NUMBER,
+    #$BuildNumber = '4',
     $PercentCompliance  = '60'
 )
 
@@ -13,8 +14,10 @@ param(
 # Static settings -- no reason to include these in the param block
 ###############################################################################
 $Settings = @{
-    SMBRepoName = 'PsymonCorp'
-    SMBRepoPath = 'F:\Shared Folder\Repo'
+    #SMBRepoName = 'PsymonCorp'
+    #SMBRepoPath = 'F:\Shared Folder\Repo'
+    SMBRepoName = 'LocalNuGetFeed'
+    SMBRepoPath = 'http://localhost:8087/nuget'
 
     Author = "Psymon Ng"
     Owners = "Michael Willis"
