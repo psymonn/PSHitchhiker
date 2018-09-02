@@ -33,8 +33,11 @@ Register-PSRepository -Name "PsymonCorp" -SourceLocation "F:\Shared Folder\Repo"
 
 Get-PSRepository
 Find-Module -Repository "PsymonCorp"
+
 Find-Module -name "PSHitchhiker" -Repository "PsymonCorp" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
+
 Install-Module -Name "PSHitchhiker" -Repository "PsymonCorp"
+
 Install-Module -Name "PSHitchhiker" -Repository "PsymonCorp" -Scope CurrentUser
 
 Import-Module PSHitchhiker
@@ -46,10 +49,12 @@ Local NuGet Server Feed Hosting:
 ---
 Get-PSRepository
 Register-PSRepository -Name "LocalNuGetFeed" -SourceLocation "http://localhost:8087/nuget" -InstallationPolicy Trusted
+
 Find-Module -name "PSHitchhiker" -Repository "LocalNuGetFeed" | Install-Module -Name "PSHitchhiker" -Scope "CurrentUser"
 
 #(C:\Data\App\LocalNuGetFeed\Packages\PSHitchhiker.1.0.25.nupkg)
 Install-Module -Name "PSHitchhiker" -Repository "LocalNuGetFeed" -Scope CurrentUser
+
 Install-Module PSHitchhiker -Repository LocalNuGetFeed
 
 Import-Module PSHitchhiker
@@ -66,4 +71,5 @@ nuget delete PSHitchhiker 1.0 -Source http://package.contoso.com/source -apikey 
 find-package -name PSHitchhiker -allversion -Source http://localhost:8087/nuget
 
 Install-Package -name PSHitchhiker -Source http://localhost:8087/nuget
+
 Get-Package -name PSHitchhiker
