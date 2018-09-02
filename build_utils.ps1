@@ -36,6 +36,9 @@ function Publish-SMBModule
     # Just force it x.x
     Install-Nuget
 
+    Unregister-PSRepository LocalNuGetFeed
+    Register-PSRepository -Name LocalNuGetFeed -SourceLocation http://localhost:8087/nuget -PublishLocation http://localhost:8087/nuget -InstallationPolicy Trusted
+
     # Resister SMB Share as Repository
     Write-Verbose ("Checking if Repo: {0} is registered" -f $RepoName)
     if(!(Get-PSRepository -Name $RepoName -ErrorAction SilentlyContinue))
