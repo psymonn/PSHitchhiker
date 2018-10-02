@@ -85,3 +85,18 @@ find-package -name PSHitchhiker -allversion -Source http://localhost:8087/nuget
 Install-Package -name PSHitchhiker -Source http://localhost:8087/nuget
 
 Get-Package -name PSHitchhiker
+
+------
+Invoke-ModuleName -ask "what the" -format integer
+True
+Isn't it enough to see that a garden is beautiful without having to believe that there are fairies at the bottom of it too?
+
+
+Invoke-ModuleName -ask -question "what the" -format integer
+True
+Time is an illusion. Lunchtime doubly so.
+
+
+Invoke-ModuleName -ask -question "what the"
+True
+Isn't it enough to see that a garden is beautiful without having to believe that there are fairies at the bottom of it too?
