@@ -8,7 +8,8 @@
 task Test BeforeTest, RunTests, ConfirmTestsPassed, AfterTest
 
 # Synopsis: Run full Pipleline.
-task . InstallDependencies, Clean, Analyze, Test, Archive, Publish
+#task . InstallDependencies, Clean, Analyze, Test, Archive, Publish
+task . InstallDependencies, Clean, Analyze, Test, Archive
 
 # Synopsis: Install Build Dependencies
 task InstallDependencies {

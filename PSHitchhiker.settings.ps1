@@ -10,6 +10,10 @@ param(
     $PercentCompliance  = '60'
 )
 
+if (!$env:BUILD_NUMBER) {
+    $BuildNumber = '1'
+}
+
 ###############################################################################
 # Static settings -- no reason to include these in the param block
 ###############################################################################
