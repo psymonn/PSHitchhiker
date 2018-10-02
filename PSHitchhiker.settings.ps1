@@ -5,19 +5,9 @@ param(
     $Artifacts = './artifacts',
     $ModuleName = 'PSHitchhiker',
     $ModulePath = './PSHitchhiker',
-    #$BuildNumber = $env:BUILD_NUMBER,
+    $BuildNumber = $env:BUILD_NUMBER,
     #$BuildNumber = '35',
-    $PercentCompliance  = '60',
-    [ValidateScript({
-        write-host "after build number: $BuildNumber"
-        if ($env:BUILD_NUMBER)
-        {
-            $BuildNumber = $env:BUILD_NUMBER
-            write-host "after build number: $BuildNumber"
-        }
-
-    })]
-    [string]$BuildNumber = '30'
+    $PercentCompliance  = '60'
 )
 
 ###############################################################################
