@@ -9,13 +9,15 @@ param(
     #$BuildNumber = '35',
     $PercentCompliance  = '60',
     [ValidateScript({
+        write-host "after build number: $BuildNumber"
         if ($env:BUILD_NUMBER)
         {
             $BuildNumber = $env:BUILD_NUMBER
+            write-host "after build number: $BuildNumber"
         }
 
     })]
-    [string]$BuildNumber = '35'
+    [string]$BuildNumber = '30'
 )
 
 ###############################################################################
