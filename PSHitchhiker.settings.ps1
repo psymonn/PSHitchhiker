@@ -6,8 +6,16 @@ param(
     $ModuleName = 'PSHitchhiker',
     $ModulePath = './PSHitchhiker',
     #$BuildNumber = $env:BUILD_NUMBER,
-    $BuildNumber = '35',
-    $PercentCompliance  = '60'
+    #$BuildNumber = '35',
+    $PercentCompliance  = '60',
+    [ValidateScript({
+        if ($env:BUILD_NUMBER)
+        {
+            $BuildNumber = $env:BUILD_NUMBER
+        }
+
+    })]
+    [string]$BuildNumber = '35'
 )
 
 ###############################################################################

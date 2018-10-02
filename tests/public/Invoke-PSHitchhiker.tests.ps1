@@ -6,6 +6,9 @@ $here = $here -replace 'tests', 'PSHitchhiker'
 
 . "$here\$sut"
 
+write-host "Invoke-PSHitchhiker.tests here: " $here
+write-host "Invoke-PSHitchhiker.tests here\sut: " "$here\$sut"
+
 # Import our module to use InModuleScope
 Import-Module (Resolve-Path ".\PSHitchhiker\PSHitchhiker.psm1") -Force
 
