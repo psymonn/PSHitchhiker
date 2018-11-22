@@ -11,8 +11,8 @@ Write-Host "file: $sut"
 . "$here\$sut"
 write-host "dot-source: $here\$sut"
 
-Describe "Get-RomanNumeral" {
-  Context "STRY0000013_Simple Calculations" {
+Describe "STRY0010005_Get-RomanNumeral" {
+  Context "STRY0010007_Simple Calculations" {
       It "Calculates the Roman Numeral for 1" {
           Get-RomanNumeral -Number 1 | Should be "I"
       }
@@ -53,7 +53,7 @@ Describe "Get-RomanNumeral" {
           Get-RomanNumeral -Number 1000 | Should be "M"
       }
     }
-    Context "STRY0000031_Complex Calculations" {
+    Context "STRY0010009_Complex Calculations" {
         It "Calculates the Roman Numeral for 1999" {
             Get-RomanNumeral -Number 1999 | Should be "MCMXCIX"
         }
