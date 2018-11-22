@@ -8,6 +8,12 @@ class Globals {
 // Workflow Steps
 node('master') {
   try {
+	 properties([
+      parameters([
+        string(name: 'requestID', defaultValue: 'REQ123456', description: 'ServiceNow RequestID', )
+       ])
+    ])
+	
     checkout scm
 
     notifyBuild('STARTED')
@@ -57,7 +63,8 @@ node('master') {
   } catch (e) {
     currentBuild.result = "FAILED"
     throw e
-  } finally {
+  } finally {	 
+	powershell '&("C:\\Users\\TI\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe") F:\\scripts\\Python\\publish_jenkins_results.py $Env:JOB_NAME $Env:BUILD_ID $env:requestID'  
     notifyBuild(currentBuild.result)
   }
 }
