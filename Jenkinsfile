@@ -63,8 +63,8 @@ node('master') {
   } catch (e) {
     currentBuild.result = "FAILED"
     throw e
-  } finally {	 
-	powershell '&("C:\\Users\\TI\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe") F:\\scripts\\Python\\publish_jenkins_results.py $Env:JOB_NAME $Env:BUILD_ID $env:requestID'  
+  } finally {
+	powershell '&("C:\\Users\\TI\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe") F:\\scripts\\Python\\publish_jenkins_results.py $Env:JOB_NAME $Env:BUILD_ID $env:requestID'
     notifyBuild(currentBuild.result)
   }
 }
